@@ -1,6 +1,6 @@
 
-const HEGICContract = artifacts.require("FakeHEGIC")
-const HegicIOContract = artifacts.require("HegicInitialOffering")
+const MIMIRContract = artifacts.require("MimirToken")
+const MIMIRIOContract = artifacts.require("MIMIRInitialOffering")
 const BN = web3.utils.BN
 
 
@@ -13,9 +13,9 @@ const send = (method, params = []) =>
   )
 
 const getIOContracts = () => Promise.all([
-    HegicIOContract.deployed(),
-    HEGICContract.deployed()
-]).then(([InitialOffering, HEGIC]) => ({InitialOffering, HEGIC}))
+    MIMIRIOContract.deployed(),
+    MIMIRContract.deployed()
+]).then(([InitialOffering, MIMIR]) => ({InitialOffering, MIMIR}))
 
 const snapshot = () => send("evm_snapshot").then(x => x.result)
 const revert = (snap) => send("evm_revert", [snap])
