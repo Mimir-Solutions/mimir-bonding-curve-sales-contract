@@ -13,7 +13,7 @@
 //         if (msg.sender == owner) _;
 //     }
 
-//     constructor() public {
+//     constructor() {
 //         owner = msg.sender;
 //     }
 
